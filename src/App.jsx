@@ -6,7 +6,7 @@ function App() {
     // This is an imperative way of adding HTML element
     // const para = document.createElement('p');
     // para.textContent = "This is a paragraph";
-    // document.getElementById('root').append(para);
+    // document.getElementById('root').append(para);    
 
     const expenses = [
         {
