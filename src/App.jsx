@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import React, {useState} from "react";
 import "../index.css"
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -9,7 +10,7 @@ function App() {
     // para.textContent = "This is a paragraph";
     // document.getElementById('root').append(para);    
 
-    const expenses = [
+    const Dummy_Expense = [
         {
             id: 'e1',
             title: 'Toilet Paper',
@@ -36,12 +37,12 @@ function App() {
         },
     ];
 
-    const addExpenseHandler = (newExpenseData) =>{
-        const newExpense = {
-            ...newExpenseData,
-        }
-        console.log(newExpense);
-    }
+    const [expenses, setExpeses] = useState(Dummy_Expense);
+    const addExpenseHandler = (expense) =>{
+        setExpeses((prevExpenses) => {
+            return [expense, ...prevExpenses]
+        });
+    };
     return (
         <>
             <NewExpense onAddExpense={addExpenseHandler} />

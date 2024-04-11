@@ -1,4 +1,5 @@
-import 'ExpensesFilter.css';
+import React from 'react';
+import './ExpensesFilter.css';
 
 function ExpensesFilter(props) {
 
