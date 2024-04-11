@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import Card from '../UI/Card';
 import './Expenses.css';
 import ExpenseList from './ExpenseList';
+import ExpenseChart from './ExpenseChart';
 
 function Expenses(props) {
 
-    const [FilteredYear, setFilteredYear] = useState('2020');
+    const [FilteredYear, setFilteredYear] = useState('2024');
     const filterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
     }
@@ -30,8 +31,9 @@ function Expenses(props) {
     return (
         <Card className="expenses">
             <ExpensesFilter selected={FilteredYear} onChangeFilter={filterChangeHandler} /> 
-
+            <ExpenseChart expenses={filteredExpenses}/>
             <ExpenseList items={filteredExpenses} />
+
             {/* We can use conditional rendering like this or we can store it in varible and just render it */}
             {/* {filteredExpenses.length ==0 && <p>No expenses found.</p>} 
             {filteredExpenses.length > 0 && filteredExpenses.map((expense) => (
